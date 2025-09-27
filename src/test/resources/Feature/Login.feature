@@ -21,7 +21,7 @@ Feature: User Registration on BlazeMeter
     And I enter email "mesbah_chy@hotmail.com"
     And I enter company "SmartTech"
     And I click the Register button
-    Then I should see an error message "An account with this email address already exists."
+    Then I should see an error message "An account with this email address already exists"
     And I should remain on the registration page
 
   @Negative  @RG003

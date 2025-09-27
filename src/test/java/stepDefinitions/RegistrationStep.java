@@ -15,7 +15,7 @@ public class RegistrationStep {
 
     WebDriver driver;
     WebDriverWait wait;
-    RegistrationPage  registrationPage;
+    RegistrationPage  rPage;
     
     @Given("I am on the BlazeMeter registration page")
     public void i_am_on_the_blaze_meter_registration_page() {
@@ -34,38 +34,38 @@ public class RegistrationStep {
 
     @When("I enter first name {string}")
     public void i_enter_first_name(String firstName) {
-        registrationPage.enterFirstName(firstName);
+        rPage.enterFirstName(firstName);
     }
 
     @When("I enter last name {string}")
     public void i_enter_last_name(String lastName) {
-        registrationPage.enterLastName(lastName);
+        rPage.enterLastName(lastName);
     }
 
     @When("I enter email {string}")
     public void i_enter_email(String email) {
-        registrationPage.enterEmail(email);
+        rPage.enterEmail(email);
     }
 
     @When("I leave the email field blank")
     public void i_leave_the_email_field_blank() {
-        registrationPage.clearEmail();
+        rPage.clearEmail();
     }
 
     @When("I enter company {string}")
     public void i_enter_company(String company) {
-        registrationPage.enterCompany(company);
+        rPage.enterCompany(company);
     }
 
     @When("I click the Register button")
     public void i_click_the_register_button() {
-        registrationPage.clickRegister();
+        rPage.clickRegister();
     }
 
     @Then("I should see a confirmation message")
     public void i_should_see_a_confirmation_message() {
-        wait.until(ExpectedConditions.visibilityOf(registrationPage.confirmationMessage));
-        Assert.assertTrue(registrationPage.isConfirmationDisplayed());
+        wait.until(ExpectedConditions.visibilityOf(rPage.confirmationMessage));
+        Assert.assertTrue(rPage.isConfirmationDisplayed());
     }
 
     @Then("I should be redirected to my dashboard")
@@ -77,8 +77,8 @@ public class RegistrationStep {
 
     @Then("I should see an error message {string}")
     public void i_should_see_an_error_message(String expectedErrorMessage) {
-        wait.until(ExpectedConditions.visibilityOf(registrationPage.errorMessage));
-        Assert.assertEquals(registrationPage.getErrorMessageText(), expectedErrorMessage);
+        wait.until(ExpectedConditions.visibilityOf(rPage.errorMessage));
+        Assert.assertEquals(rPage.getErrorMessageText(), expectedErrorMessage);
     }
 
     @Then("I should remain on the registration page")

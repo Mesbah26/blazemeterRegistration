@@ -26,10 +26,10 @@ public class RegistrationStep {
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         driver.get("https://www.blazemeter.com/signup");
 
-        RegistrationPage      registrationPage = new RegistrationPage(driver);
+        rPage = new RegistrationPage(driver);
 
-        wait.until(ExpectedConditions.visibilityOf(registrationPage.pageTitle));
-        Assert.assertTrue(registrationPage.isPageTitleDisplayed());
+        wait.until(ExpectedConditions.visibilityOf(rPage.pageTitle));
+        Assert.assertTrue(rPage.isPageTitleDisplayed());
     }
 
     @When("I enter first name {string}")
